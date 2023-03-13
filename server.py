@@ -1,6 +1,5 @@
 import socket
 import pickle
-#import re
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = socket.gethostname()
