@@ -58,7 +58,8 @@ def get_rook_moves(pos, chess_board):
             i = i + 1
 
 
-        except:
+        except Exception as inst:
+            print("invalid response")
             break
 
     # top left
