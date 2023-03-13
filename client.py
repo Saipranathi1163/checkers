@@ -9,7 +9,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((host, port))
 print('connected')
 
-chessBoard = [['--'] * 8 for i in range(8)]
+chessBoard = [['--'] * 8 for _ in range(8)]
 
 temp = chessBoard
 
