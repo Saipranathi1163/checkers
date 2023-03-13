@@ -39,7 +39,6 @@ chess_map_from_index_to_alpha = {
 def get_rook_moves(pos, chess_board):
     column, row = list(pos.strip().lower())
     row = int(row) - 1
-    col_1 = column
     column = chess_map_from_alpha_to_index[column]
     i, j = row, column
     solution_moves = []
