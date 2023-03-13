@@ -14,7 +14,7 @@ print("conection ok")
 client2, addr2 = s.accept()  # black client
 
 
-def winCheck(chessBoard):
+def win_check(chess_board):
     if not (any('wk' in sublist for sublist in chessBoard)):
         return 2
     elif not (any('bk' in sublist for sublist in chessBoard)):
