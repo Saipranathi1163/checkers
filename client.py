@@ -36,23 +36,23 @@ chess_map_from_index_to_alpha = {
 }
 
 
-def getRookMoves(pos, chessBoard):
+def get_rook_moves(pos, chess_board):
     column, row = list(pos.strip().lower())
     row = int(row) - 1
-    col1 = column
+    col_1 = column
     column = chess_map_from_alpha_to_index[column]
     i, j = row, column
-    solutionMoves = []
+    solution_moves = []
 
     # top right
     while 1:
         try:
-            temp = chessBoard[i + 1][j]
+            temp = chess_board[i + 1][j]
             color, piece = list(temp.strip().lower())
             if (color == '-'):
-                solutionMoves.append([i + 1, j])
+                solution_moves.append([i + 1, j])
             elif (color == 'b'):
-                solutionMoves.append([i + 1, j])
+                solution_moves.append([i + 1, j])
                 break
             else:
                 break
@@ -68,12 +68,12 @@ def getRookMoves(pos, chessBoard):
     while 1:
 
         try:
-            temp = chessBoard[i - 1][j]
+            temp = chess_board[i - 1][j]
             color, piece = list(temp.strip().lower())
             if (color == '-'):
-                solutionMoves.append([i - 1, j])
+                solution_moves.append([i - 1, j])
             elif (color == 'b'):
-                solutionMoves.append([i - 1, j])
+                solution_moves.append([i - 1, j])
                 break
             else:
                 break
@@ -87,12 +87,12 @@ def getRookMoves(pos, chessBoard):
     # print('top left')
     while 1:
         try:
-            temp = chessBoard[i][j - 1]
+            temp = chess_board[i][j - 1]
             color, piece = list(temp.strip().lower())
             if (color == '-'):
-                solutionMoves.append([i, j - 1])
+                solution_moves.append([i, j - 1])
             elif (color == 'b'):
-                solutionMoves.append([i, j - 1])
+                solution_moves.append([i, j - 1])
                 break
             else:
                 break
@@ -106,12 +106,12 @@ def getRookMoves(pos, chessBoard):
     i, j = row, column
     while 1:
         try:
-            temp = chessBoard[i][j + 1]
+            temp = chess_board[i][j + 1]
             color, piece = list(temp.strip().lower())
             if (color == '-'):
-                solutionMoves.append([i, j + 1])
+                solution_moves.append([i, j + 1])
             elif (color == 'b'):
-                solutionMoves.append([i, j + 1])
+                solution_moves.append([i, j + 1])
                 break
             else:
                 break
@@ -121,7 +121,7 @@ def getRookMoves(pos, chessBoard):
         except:
             break
 
-    temp = [i for i in solutionMoves if i[0] >= 0 and i[1] >= 0]
+    temp = [i for i in solution_moves if i[0] >= 0 and i[1] >= 0]
     allPossibleMoves = ["".join([chess_map_from_index_to_alpha[i[1]], str(i[0] + 1)]) for i in temp]
     allPossibleMoves.sort()
     return allPossibleMoves
