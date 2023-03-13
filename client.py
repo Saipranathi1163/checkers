@@ -149,11 +149,8 @@ def getKingMoves(pos, chessBoard):
     try:
         temp = chessBoard[i + 1][j + 1]
         color, piece = list(temp.strip().lower())
-        if (color == '-'):
+        if (color == '-' || color == 'b'):
             solutionMoves.append([i + 1, j + 1])
-        elif (color == 'b'):
-            solutionMoves.append([i + 1, j + 1])
-
 
     except:
         pass
